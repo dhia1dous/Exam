@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Test - Vente en Ligne</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Ordinateur Portable</h1>
+        <div class="product-img">💻</div>
+        <span class="price">1200,00 DT</span>
+        
+        <button id="add-to-cart-btn" onclick="addToCart()">
+            Ajouter au panier
+        </button>
+
+        <div class="cart-status">
+            Articles dans le panier : <span id="cart-count">0</span>
+        </div>
+    </div>
+
+    <script>
+        function addToCart() {
+            const countElement = document.getElementById('cart-count');
+            let currentCount = parseInt(countElement.innerText);
+            countElement.innerText = currentCount + 1;
+            
+            const btn = document.getElementById('add-to-cart-btn');
+            btn.innerText = "Ajouté !";
+            btn.style.backgroundColor = "#28a745";
+            setTimeout(() => {
+                btn.innerText = "Ajouter au panier";
+                btn.style.backgroundColor = "#1a2a6c";
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
